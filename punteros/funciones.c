@@ -23,16 +23,18 @@ void imprimirClientes(char clientes[][2][40]){
         printf("%s\t\t%s\n",clientes[i][0],clientes[i][1]);
     }   
 }
-void buscarporNombre(char peliculas [][4][40]){
-    char nombre[41];
+void buscarPorNombreConPuntero(char peliculas [][4][40],int *indicePelicula){
+    char nombre[40];
     printf ("ingrese el nombre de la pelicula que desea buscar:\n");
-    scanf("%40s",nombre);
+    scanf("%s",nombre);
     for (int i = 0; i < 10; i++) {
         if (strcmp(peliculas[i][1], nombre) == 0) {
+            *indicePelicula = i ;
             printf("%s\t\t%s\t\t%s\t\t%s\n",peliculas[i][0],peliculas[i][1],peliculas[i][2],peliculas[i][3]);
         }
     }
 }
+
 void buscarporGenero(char peliculas [][4][40]){
     char nombre[41];
     printf ("ingrese la categoria de la pelicula que desea buscar:\n");
@@ -121,17 +123,6 @@ void comprarTicket(char peliculas[][4][40],int precio[3],char clientes[5][2][40]
             }while(CondicionParaBuscar=1);
     
         }
-}
-void buscarPorNombreConPuntero(char peliculas [][4][40],int *indicePelicula){
-    char nombre[40];
-    printf ("ingrese el nombre de la pelicula que desea buscar:\n");
-    scanf("%s",nombre);
-    for (int i = 0; i < 10; i++) {
-        if (strcmp(peliculas[i][1], nombre) == 0) {
-            *indicePelicula = i ;
-            printf("%s\t\t%s\t\t%s\t\t%s\n",peliculas[i][0],peliculas[i][1],peliculas[i][2],peliculas[i][3]);
-        }
-    }
 }
 
 void verCompras(int reserva[0][4]){
