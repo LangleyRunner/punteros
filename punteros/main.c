@@ -15,16 +15,16 @@ int main (int argc, char *argv[]) {
 
     
     char peliculas[10][4][40]={
-                                {"","","",""},
-                                {"","","",""},
-                                {"","","",""},
                                 {"1","Avatar","10:20","Fantasia"},
-                                {"","","",""},
-                                {"","","",""},
-                                {"","","",""},
-                                {"","","",""},
-                                {"","","",""},
-                                {"","","",""}};
+                                {"2","Avengers","11:30","Accion"},
+                                {"3","Ted","12:00","Comedia"},
+                                {"4","Shrek","12:30","Animacion"},
+                                {"5","Megamente","9:00","Animacion"},
+                                {"6","El conjuro","8:00","Terror"},
+                                {"7","Transformers","8:00","Accion"},
+                                {"8","Donde esta el fantasma","$4:20","Comedia"},
+                                {"9","Pitufos","14:00","Animacion"},
+                                {"10","Titanic","12:00","Suspenso"}};
     int precio[3]={700,350,300};//normal , ninos y 3ra edad
     char clientes[5][2][40]={{"",""},
                              {"Luis","123456788"},
@@ -63,10 +63,7 @@ int main (int argc, char *argv[]) {
             switch (opcion3)
             {
             case 1:
-                buscarporNombre(peliculas);
-                //printf("%d antes\n",peliculaSeleccionada);
-                //buscarPorNombreConPuntero(peliculas,peliculaPuntero);
-                //printf("%d despues\n",peliculaSeleccionada);
+                buscarPorNombreConPuntero(peliculas,peliculaPuntero);
                 break;
             case 2:
                 buscarporGenero(peliculas);
