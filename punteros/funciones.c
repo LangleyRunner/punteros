@@ -64,10 +64,6 @@ void comprarTicket(char peliculas[][4][40],int precio[3],char clientes[5][2][40]
     int precioAcumulado = 0;
     int opcionPrograma = 0;
 
-    printf("\n reserva : %d \n",reserva[0][0]);
-    //con 
-    //(remplazar en reservas i,0)
-
         for (int i = 0; i < 10; i++)
         {    
             int CondicionParaBuscar= 0;
