@@ -116,7 +116,7 @@ void comprarTicket(char peliculas[][4][40],int precio[3],char clientes[5][2][40]
                         break;
                     
                 }
-            }while(CondicionParaBuscar=1);
+            }while((CondicionParaBuscar) == 1);
     
         }
 }
@@ -125,7 +125,7 @@ void verCompras(int reserva[0][4]){
     for (int i = 0; i < 10; i++)
     {
         if ((reserva[i][0])!= -1)
-        printf("%s\t\t%s\n",reserva[i][0],reserva[i][1],reserva[i][2],reserva[i][3]);
+        printf("%d\t\t%d\t\t%d\t\t%d\n",reserva[i][0],reserva[i][1],reserva[i][2],reserva[i][3]);
     }  
 } 
 
