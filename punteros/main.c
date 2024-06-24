@@ -20,7 +20,7 @@ int main (int argc, char *argv[]) {
                                 {"3","Ted","12:00","Comedia"},
                                 {"4","Shrek","12:30","Animacion"},
                                 {"5","Megamente","9:00","Animacion"},
-                                {"6","El conjuro","8:00","Terror"},
+                                {"6","Intensamente","8:00","Animacion"},
                                 {"7","Transformers","8:00","Accion"},
                                 {"8","Donde esta el fantasma","$4:20","Comedia"},
                                 {"9","Pitufos","14:00","Animacion"},
@@ -32,7 +32,7 @@ int main (int argc, char *argv[]) {
                              {"",""},
                              {"",""}};
 
-    int reserva[10][4]={{-1,-1,-1,-1},//pelicula 0, cliente 1, 3 tickets, precio 4 
+    int reserva[10][4]={{-1,-1,-1,-1},//pelicula 0, cliente 1, 3 tickets, precio 4 (en centavos)
                          {-1,-1,-1,-1},
                          {-1,-1,-1,-1},
                          {-1,-1,-1,-1},
@@ -45,6 +45,11 @@ int main (int argc, char *argv[]) {
 
 
     int opcion1=0,opcion2=0,opcion3=0;
+    int i=0;
+    // for (i = 0; i < 5; i++){
+    
+    // }
+    // printf("valor de i %d",i);
     do
     {
         printf("Escoja una opcion:\n1.Ingresar Cliente\n2.Ver Peliculas\n3.Buscar Pelicula\n4.Comprar Ticket\n5.Ver Compras\n>>");
@@ -52,12 +57,13 @@ int main (int argc, char *argv[]) {
         switch (opcion2)
         {
         case 1:
+            comprarTicket(peliculas,precio,clientes,reserva,peliculaPuntero,clientepuntero);
             ingresarCliente(clientes);
             break;
         case 2:
             listarPeliculas(peliculas);
             break;
-        case 3:
+        case 3:{
             printf("1.Por nombre\n2.Por Genero\n>>");
             scanf("%d",&opcion3);
             switch (opcion3)
@@ -72,11 +78,12 @@ int main (int argc, char *argv[]) {
                 break;
             }
             break;
+        }
         case 4:
             comprarTicket(peliculas,precio,clientes,reserva,peliculaPuntero,clientepuntero);
             break;
         case 5:
-            verCompras(reserva);
+            verCompras(reserva , peliculas , clientes);
             break;
         default:
 
